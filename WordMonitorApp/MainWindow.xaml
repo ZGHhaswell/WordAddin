@@ -1,0 +1,34 @@
+﻿<Window x:Class="WordMonitorApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:xc="clr-namespace:WordMonitorApp.DependProperties"
+        xc:DialogResultHelper.DialogResult="{Binding DialogReuslt}"
+        Title="Word文档监视" Height="600" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"></ColumnDefinition>
+            <ColumnDefinition Width="3*"></ColumnDefinition>
+            <ColumnDefinition Width="1*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <ListBox Grid.Column="0" ItemsSource="{Binding Clients, Mode=TwoWay}" SelectedItem="{Binding Client, Mode=TwoWay}"  Margin="5">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding ClientInfo}"></TextBlock>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <ListBox Grid.Column="1" ItemsSource="{Binding Graphs, Mode=TwoWay}" SelectedItem="{Binding Graph, Mode=TwoWay}" Margin="5">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding GraphInfo}"></TextBlock>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <Button Content="选择段落" Command="{Binding SelectCommand}" Grid.Column="2" Height="23" HorizontalAlignment="Left" Margin="32,12,0,0" Name="button1" VerticalAlignment="Top" Width="75" />
+        <Button Content="删除段落" Command="{Binding DeleteCommand}" Height="23" HorizontalAlignment="Left" Margin="32,57,0,0" Name="button2" VerticalAlignment="Top" Width="75" Grid.Column="2" />
+        <TextBox Text="{Binding InsertContent, Mode=TwoWay}" Grid.Column="2" Height="23" HorizontalAlignment="Left" Margin="23,98,0,0" Name="textBox1" VerticalAlignment="Top" Width="120" />
+        <Button Command="{Binding InsertCommand}" Content="插入段落" Height="23" HorizontalAlignment="Left" Margin="32,140,0,0" Name="button3" VerticalAlignment="Top" Width="75" Grid.Column="2" />
+        <TextBox Text="{Binding ModifyContent, Mode=TwoWay}" Height="23" HorizontalAlignment="Left" Margin="23,180,0,0" Name="textBox2" VerticalAlignment="Top" Width="120" Grid.Column="2" />
+        <Button Command="{Binding ModifyCommand}" Content="修改段落" Height="23" HorizontalAlignment="Left" Margin="32,220,0,0" Name="button4" VerticalAlignment="Top" Width="75" Grid.Column="2" />
+    </Grid>
+</Window>

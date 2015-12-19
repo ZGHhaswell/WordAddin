@@ -1,0 +1,5 @@
+C:\wordPlugin\trunk\TcpUtils\bin\Debug\TcpUtils.dll
+C:\wordPlugin\trunk\TcpUtils\bin\Debug\TcpUtils.pdb
+C:\wordPlugin\trunk\TcpUtils\obj\Debug\TcpUtils.dll
+C:\wordPlugin\trunk\TcpUtils\obj\Debug\TcpUtils.pdb
+C:\wordPlugin\trunk\TcpUtils\obj\Debug\TcpUtils.csprojResolveAssemblyReference.cache
